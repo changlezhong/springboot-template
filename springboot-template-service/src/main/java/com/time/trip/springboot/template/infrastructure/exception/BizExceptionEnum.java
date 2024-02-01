@@ -1,9 +1,5 @@
 package com.time.trip.springboot.template.infrastructure.exception;
 
-/**
- * @author changlezhong
- * @description
- */
 public enum BizExceptionEnum {
 
     SYSTEM_ERROR("-2", "系统异常"),

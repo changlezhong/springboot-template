@@ -10,9 +10,6 @@ import lombok.Data;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-/**
- * @author changlezhong
- */
 @Data
 public class BaseDO implements Serializable {
 

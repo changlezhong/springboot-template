@@ -49,8 +49,10 @@ public class CodeGenerator {
                 .author("trip")
                 // 开启 kotlin 模式
 //                .enableKotlin()
-                // 开启 swagger 模式，entity一般无需 swagger 注释
+                // 开启 swagger 模式
 //                .enableSwagger()
+                // 开启 springdoc 模式
+                .enableSpringdoc()
                 // 时间策略(ONLY_DATE: 只使用 java.util.date 代替, SQL_PACK: 使用 java.sql 包下的, TIME_PACK: 使用 java.time 包下的)
                 // 默认 TIME_PACK，一般使用 TIME_PACK(java8 新的时间类型，LocalDateTime 等类型)
 //                .dateType(DateType.TIME_PACK)

@@ -1,13 +1,9 @@
 package com.time.trip.springboot.template.infrastructure.response;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-/**
- * @author changlezhong
- * 
- */
 public class SingleResponse<T> extends Response {
-    @ApiModelProperty("数据")
+    @Schema(description = "数据")
     private T data;
 
     public static <T> SingleResponse<T> of(T data) {
@@ -25,16 +21,16 @@ public class SingleResponse<T> extends Response {
         this.data = data;
     }
 
-    public static SingleResponse buildFailure(String errCode, String errMessage) {
-        SingleResponse response = new SingleResponse();
+    public static SingleResponse<?> buildFailure(String errCode, String errMessage) {
+        SingleResponse<?> response = new SingleResponse<>();
         response.setSuccess(false);
         response.setErrCode(errCode);
         response.setErrMessage(errMessage);
         return response;
     }
 
-    public static SingleResponse buildSuccess(){
-        SingleResponse response = new SingleResponse();
+    public static SingleResponse<?> buildSuccess() {
+        SingleResponse<?> response = new SingleResponse<>();
         response.setSuccess(true);
         return response;
     }
