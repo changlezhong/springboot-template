@@ -1,22 +1,15 @@
 package com.time.trip.springboot.template.controller.testext;
 
 import com.time.trip.springboot.template.infrastructure.model.ext.TestTableExtDO;
+import com.time.trip.springboot.template.infrastructure.response.SingleResponse;
 import com.time.trip.springboot.template.service.ITestTableService;
 import jakarta.annotation.Resource;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-/**
- * <p>
- *  前端控制器
- * </p>
- *
- * @author trip
- * @since 2024-02-01
- */
-@Controller
+@RestController
 @RequestMapping("/test/ext")
 public class TestExtTableController {
 
@@ -25,8 +18,8 @@ public class TestExtTableController {
 
 
     @GetMapping("/table")
-    public TestTableExtDO testTableExtDO(@RequestParam String name) {
-        return testTableService.getByName(name);
+    public SingleResponse<TestTableExtDO> testTableExtDO(@RequestParam String name) {
+        return SingleResponse.of(testTableService.getByName(name));
     }
 
 }

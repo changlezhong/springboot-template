@@ -5,14 +5,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * <p>
- * 
- * </p>
- *
- * @author trip
- * @since 2024-02-01
- */
 @Getter
 @Setter
 @Schema(name = "TestTableDO", description = "")
