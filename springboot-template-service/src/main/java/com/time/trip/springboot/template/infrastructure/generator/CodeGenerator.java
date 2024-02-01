@@ -2,9 +2,7 @@ package com.time.trip.springboot.template.infrastructure.generator;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.*;
-import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.time.trip.mybatisplus.infrastructure.BaseEntity;
 import com.time.trip.springboot.template.infrastructure.BaseDO;
 import org.apache.commons.lang3.StringUtils;
 
@@ -35,7 +33,7 @@ public class CodeGenerator {
      * 数据源配置
      */
     private static final DataSourceConfig DATA_SOURCE_CONFIG = new DataSourceConfig
-            .Builder("jdbc:mysql://localhost:3306/mybatis_plus", "root", "123456")
+            .Builder("jdbc:mysql://localhost:3306/mybatis_plus", "root", "Nriet@123")
             .build();
 
     /**
@@ -46,7 +44,7 @@ public class CodeGenerator {
                 // 禁止打开输出目录，一般不需要打开
                 .disableOpenDir()
                 // 指定输出目录，通过 `System.getProperty("user.dir")` 获取当前工程绝对路径，然后再指定到 Source 目录即可。具体的包路径由包配置定义
-                .outputDir(System.getProperty("user.dir") + "/src/main/java")
+                .outputDir(System.getProperty("user.dir") + "/springboot-template-service/src/main/java")
                 // 作者名，一般使用公司简称
                 .author("trip")
                 // 开启 kotlin 模式
@@ -55,7 +53,7 @@ public class CodeGenerator {
 //                .enableSwagger()
                 // 时间策略(ONLY_DATE: 只使用 java.util.date 代替, SQL_PACK: 使用 java.sql 包下的, TIME_PACK: 使用 java.time 包下的)
                 // 默认 TIME_PACK，一般使用 TIME_PACK(java8 新的时间类型，LocalDateTime 等类型)
-                .dateType(DateType.TIME_PACK)
+//                .dateType(DateType.TIME_PACK)
                 // 注释日期
                 .commentDate("yyyy-MM-dd")
                 ;
@@ -67,9 +65,9 @@ public class CodeGenerator {
     protected static PackageConfig.Builder packageConfig() {
         return new PackageConfig.Builder()
                 // 父包名
-                .parent("com.time.trip.mybatisplus")
+                .parent("com.time.trip.springboot.template")
                 // Entity包名，entity、mapper一般放在infrastructure层或do层
-                .entity("infrastructure.entity")
+                .entity("infrastructure.model")
                 // Service 包名
                 .service("service")
                 // Service Impl 包名
