@@ -33,7 +33,7 @@ public class CodeGenerator {
      * 数据源配置
      */
     private static final DataSourceConfig DATA_SOURCE_CONFIG = new DataSourceConfig
-            .Builder("jdbc:mysql://localhost:3306/mybatis_plus", "root", "Nriet@123")
+            .Builder("jdbc:mysql://localhost:3306/mybatis_plus", "root", "123456")
             .build();
 
     /**
